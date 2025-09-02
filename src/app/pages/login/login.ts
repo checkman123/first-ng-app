@@ -38,12 +38,9 @@ export class Login {
     if (this.loginForm.valid) {
       //spread operator to copy form values to loginData
       this.loginData = { ...this.loginForm.value };
-
-      console.log('Login with:', this.loginData.emailId, this.loginData.password);
-
+      //Call login service
       this.employeeService.onLogin(this.loginData).subscribe({
         next: (res: any) => {
-          console.log('Login successful', res);
           if (res.result) {
             localStorage.setItem('leaveUser', JSON.stringify(res.data));
             this.router.navigateByUrl('/dashboard');
@@ -56,7 +53,7 @@ export class Login {
         },
       });
     } else {
-      console.log('Form invalid');
+      alert('Form data invalid');
     }
   }
 }
