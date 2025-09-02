@@ -61,3 +61,10 @@ For more information on using the Angular CLI, including detailed command refere
 ## Api
 
 > https://freeapi.miniprojectideas.com/index.html
+
+# Test email & pw
+
+```
+www@gmail.com
+112233
+```

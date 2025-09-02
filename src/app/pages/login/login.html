@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div class="login-wrapper d-flex align-items-center justify-content-center">
+  <div class="login-card card shadow-lg">
+    <div class="card-body">
+      <h2 class="text-center mb-4">Sign In</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            required
+            formControlName="emailId"
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            required
+            formControlName="password"
+          />
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary w-100" [disabled]="!loginForm.valid">
+          Login
+        </button>
+      </form>
+
+      <div class="text-center mt-3">
+        <a routerLink="/register" class="text-decoration-none">Create an account</a>
+      </div>
+    </div>
+  </div>
+</div>
