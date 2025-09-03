@@ -1,1 +1,42 @@
-<p>layout works!</p>
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div
+    id="sidebar-wrapper"
+    class="bg-dark text-white border-end d-flex flex-column justify-content-between"
+  >
+    <!-- Scrollable content -->
+    <div class="sidebar-content">
+      <div class="sidebar-heading p-3">My App</div>
+      <div class="list-group list-group-flush">
+        <a routerLink="dashboard" class="list-group-item list-group-item-action bg-dark text-white"
+          >Dashboard</a
+        >
+        <a routerLink="employee" class="list-group-item list-group-item-action bg-dark text-white"
+          >Employees</a
+        >
+        <a routerLink="leave" class="list-group-item list-group-item-action bg-dark text-white"
+          >Leaves</a
+        >
+        <!-- More links can go here -->
+      </div>
+    </div>
+
+    <!-- Logout button at the bottom -->
+    <div class="p-3">
+      <button class="btn btn-danger w-100 logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div id="page-content-wrapper" class="flex-grow-1 d-flex flex-column">
+    <nav class="navbar navbar-light bg-light border-bottom">
+      <button class="btn btn-primary" id="menu-toggle" (click)="toggleSidebar()">☰</button>
+      <span class="navbar-brand ms-3">My App</span>
+    </nav>
+
+    <!-- Main content where child routes render -->
+    <div class="container-fluid mt-3 flex-grow-1 overflow-auto">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

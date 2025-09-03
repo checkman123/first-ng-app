@@ -7,7 +7,7 @@ import {
   FormControl,
 } from '@angular/forms';
 import { LoginModel } from '../model/Employee.model';
-import { Employee } from '../../services/employee';
+import { EmployeeService } from '../../services/employee';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class Login {
   //Inject services
-  employeeService = inject(Employee);
+  employeeService = inject(EmployeeService);
   router = inject(Router);
   //Define form group and model
   loginForm: FormGroup = new FormGroup({
